@@ -1,0 +1,13 @@
+.cell-box {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px  solid black;
+}
+
+#gameWord {
+   height: 4rem;
+   margin: .5rem;
+   /* padding:  .5rem; */
+   padding-bottom: -5px;
+   /* padding: .5rem; */
+}

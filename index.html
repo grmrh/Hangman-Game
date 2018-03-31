@@ -40,7 +40,7 @@
               <div class="bs-component">
                 <div class="jumbotron text-center">
                   <h1 class="display-3 text-center">Press any key to get started!</h1>
-                  <p class="lead">Wins: </p>
+                  <p class="lead">Wins: <h1 class="text-primary" id="numberOfWins"></h1></p>
                   <hr class="my-4">
                   <p>Want some music in background? Hit the button below..</p>
                   <p class="lead">
@@ -60,26 +60,30 @@
 
     <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                         <!-- <div class="bs-component"> -->
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Game Play</h4>
                             <h6 class="card-subtitle mb-2 text-muted">You will absolutely love it, period.</h6>
-                            <p class="card-text">Hit the key in the keyboard. When you guess right, the upper character letter will display in the position(s). </p>
+                            <p class="card-text">Hit the key in the keyboard. When you guess right key, its upper character letter will display in the position(s). You have 15 trials for each game. Good luck!</p>
                             <h2 id="targetWord" style="display:none"></h2>
+                            <div class="game-tried-box">
+                                <h4>Remaining number of trials: 
+                                <span id="remainingCount" class="text-primary"></span></h4>
+                            </div>
                             <div class="game-word-box">
                                 <h1 id="gameWord" class="text-primary"></h1>
                             </div>
                             <div class="game-tried-box">
-                                <h6>Letters you have tried: </h6>
+                                <h4>Letters you have tried: </h4>
                                 <h1 id="triedChars" class="text-lg"></h1>
                             </div>
                         </div>
                     <!-- </div> -->
                     </div>
                 </div>
-                <div class-"col-lg-4">
+                <!-- <div class-"col-lg-4">
                         <div class="bs-component">
                     <div class="card">
                         <div class="card-body">
@@ -133,7 +137,7 @@
                             </div>  
                         </div>  
                     </div>
-                </div>
+                </div> -->
                 </div>
             </div>             
     </div>

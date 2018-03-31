@@ -18,6 +18,7 @@ var hangmanLib = (function() {
         userName: 'Anoymous',  
         targetWord: '', 
         triedCharacters:  [ ], 
+        wordProgress: [ ], 
         correctCount: 0,
         wrongCount: 0,
         tillCorrectCount: function() {return this.correctCount + this.wrongCount}, 
@@ -29,7 +30,30 @@ var hangmanLib = (function() {
             else {
                 return ((this.correctCount * 100)/this.tillCorrectCount()/100).toFixed(2)
             }
-        }      
+        }, 
+        reset: function() {
+            this.targetWord = '';
+            this.triedCharacters = [ ];
+            this.correctCount = 0;
+            this.wrongCount = 0;
+            this.maxNumberOfTrialLimit = 15;
+        }
+        // getReadyForGame: function(remainingCounterSelector, gameWordSelector, triedCharsSelector) {
+
+        //     this.reset();
+        //     var wordProgress = [];
+        //     $("#remainingCount").text(this.maxNumberOfTrialLimit);
+
+        //     // display initial place holder
+        //     //targetWord = hangmanLib.getWord();
+        //     userGame.targetWord =  hangmanLib.getWord();
+        //     var targetCharacters = hangmanLib.getCharArray(targetWord);
+
+        //     wordProgress = hangmanLib.initializePlaceHolder("*", targetCharacters.length);
+
+        //     hangmanLib.displayGameProgress($("#gameWord"), targetCharacters.length, wordProgress);
+        //     $("#triedChars").empty();
+        // }   
     };
     
 
@@ -125,7 +149,7 @@ var displayGameProgress = function(selector, wordLength, divValues) {
                         .css({"padding":".6rem 0.05rem", "margin": ".2rem" });
         selector.append(cell);
         //wordProgress[i] = cell.text();
-    };n
+    };
 };
 
     return {

@@ -50,6 +50,7 @@ require(['hangmanLib'], function(lib) {
      //var numberOfTrials = userGame.maxNumberOfTrialLimit;
     document.onkeyup = function(event) 
     {
+        console.log( $("#remainingCount").text());
         var userKey = (event.key).toUpperCase();
         userGame.triedCharacters.push(userKey);
        
@@ -157,6 +158,7 @@ require(['hangmanLib'], function(lib) {
 
                 hangmanLib.displayGameProgress($("#gameWord"), targetCharacters.length, wordProgress);
                 $("#triedChars").empty();
+                return;
             } 
         }
         else {

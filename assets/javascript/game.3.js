@@ -3,9 +3,10 @@
 */
 //var lib = require('./hangmanLib');
 require(['hangmanLib'], function(lib) {
-    // var username = prompt("Please enter username, e.g. like  'user1' or 'dragon.' Remember your username");
+
+    var username = prompt("Please enter username, e.g. like  'user1' or 'dragon.' Remember your username");
     var userGame = hangmanLib.userGame;
-    // userGame.userName = username;
+    userGame.userName = username;
     var gameStats = hangmanLib.gameStats;
 
     var targetWord = hangmanLib.getWord();
@@ -65,6 +66,7 @@ require(['hangmanLib'], function(lib) {
             }
         });
 
+        // key matched
         if (indexFound.length > 0) 
         {
             $.each(indexFound, (index, item) => {
@@ -85,28 +87,28 @@ require(['hangmanLib'], function(lib) {
 
             console.log(userGame);
             console.log(userGame.triedCharacters.toString());
-            console.log(userGame.tillCorrectCount);
+            console.log(userGame.tillCorrectCount());
 
             // check if game done and display congratulation comment a little delayed.
-            setTimeout(function() {
-                var reachedMaxNumberOfTrial = (userGame.maxNumberOfTrialLimit == (userGame.correctCount + userGame.wrongCount)) ? true : false;
-                if ( hangmanLib.checkGameOver(wordProgress)) 
-                {
-                    gameStats.gameCount++;
-                    gameStats.userGameHistory.push(userGame);
-                    gameStats.numberOfWins++;
             
-                    console.log(userGame);
-                    var tried = userGame.triedCharacters.toString();
-                    console.log(tried);
-                    $("#userTargetWord").text(userGame.targetWord);
-                    $("#userTriedChars").text(userGame.triedCharacters.toString());
-                    $("#userCorrectCount").text(userGame.correctCount);
-                    $("#userWrongCount").append($("<label></label>").text(userGame.wrongCount));
-                    $("#userTriedCharsCount").html(userGame.tillCorrectCount());
-                    $("#userScore").text(userGame.averageScore());
-                    
-
+            var reachedMaxNumberOfTrial = (userGame.maxNumberOfTrialLimit == (userGame.correctCount + userGame.wrongCount)) ? true : false;
+            if ( hangmanLib.checkGameOver(wordProgress)) 
+            {
+                gameStats.gameCount++;
+                gameStats.userGameHistory.push(userGame);
+                gameStats.numberOfWins++;
+        
+                console.log(userGame);
+                var tried = userGame.triedCharacters.toString();
+                console.log(tried);
+                $("#userTargetWord").text(userGame.targetWord);
+                $("#userTriedChars").text(userGame.triedCharacters.toString());
+                $("#userCorrectCount").text(userGame.correctCount);
+                $("#userWrongCount").append($("<label></label>").text(userGame.wrongCount));
+                $("#userTriedCharsCount").html(userGame.tillCorrectCount());
+                $("#userScore").text(userGame.averageScore());
+                
+                setTimeout(function() {
                     if (alert("You Won")) {
                         console.log(userGame);
                         $("#userTargetWord").text(userGame.targetWord);
@@ -115,23 +117,21 @@ require(['hangmanLib'], function(lib) {
                         $("#userWrongCount").append($("<label></label>").text(userGame.wrongCount));
                         $("#userTriedCharsCount").html(userGame.tillCorrectCount());
                         $("#userScore").text(userGame.averageScore());
-                        console.log(userGame.averageScore());
+            
                     }
-                }
-                else if (reachedMaxNumberOfTrial)
-                {
-                    gameStats.gameCount++;
-                    gameStats.userGameHistory.push(userGame);
-                    gameStats.numberOfLossses++;
-                }
-
-            }, 100);      
+                }, 100);      
+            }
+            // else if (reachedMaxNumberOfTrial)
+            // {
+            //     gameStats.gameCount++;
+            //     gameStats.userGameHistory.push(userGame);
+            //     gameStats.numberOfLossses++;
+            // }
         }
         else {
             userGame.wrongCount++;
         }
     };
-
 });
 
 

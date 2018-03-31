@@ -5,48 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href = "assets/css/superheroTheme/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href = "assets/css/style.css" type="text/css">
     <title>Hangman game</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="container">
+    <div class="container">
+        <!-- <div class="container"> -->
+           
             <div class="row">
-                <div class="col">
-                    <header>What </header>
-                </div>
-            </div>
-            <div class="row">
-                <div class-"col-md-4">
-                    aside
-                    <!-- <div class="row">
-                        <div class="col-sm-3 col-md-3 col-lg-6">
-                            first label
-                        </div>
-                        <div class="col-sm-3 col-md-3 col-lg-6">
-                            first value
-                        </div>
-                        <div class="col-sm-3 col-md-3 col-lg-6">
-                            second label
-                        </div>
-                        <div class="col-sm-3 col-md-3 col-lg-6">
-                            second value
-                        </div>
-                    </div> -->
-                </div>
                 <div class="col-md-8">
-                    <header>Hangman, let it begin!</header>
+                    <header><h3>Hangman, let it begin!</h3></header>
                     <h2 id="targetWord" placeholder="display target word here"></h2>
                     <h2 id="gameWord" placeholder="display target word here"></h2>
-                    <h4>You tried characters below: </h4>
+                    <h4>You have tried: </h4>
                     <h3 id="triedChars" placeholder="display tried characters"></h3>
                 </div>
+                <div class-"col-md-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Target word: <label id="userTargetWord"></label></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Tried characters: <label id="userTriedChars"></label></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                                <label># of chars guessed correctly: <label id="userCorrectCount"></label></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label># of chars guessed wrongly: <label id="userWrongCount"></label></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label># of tried chars: <label id="userTriedCharsCount"></label></label>
+                        </div>  
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label>User score: <label id="userScore"></label></label>
+                        </div>       
+                    </div>    
+                    </div>
+                </div>             
             </div>
-        </div>
+        <!-- </div> -->
+
+            <div class="row">
+                <div class="col-8">A</div>
+                <div class="col-4">B</div>
+            </div>
     </div>
-
-
-
 
 
     
@@ -54,8 +69,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- <script data-main="assets/javascript/gamejs" src ="assets/javascript/require.js"></script> -->
-<script src="assets/javascript/hangmanLib.js" ></script>
-<script src="assets/javascript/game.js" ></script>
+<!-- <script src="assets/javascript/require.js" ></script> -->
+<!-- <script src="assets/javascript/hangmanLib.js" ></script> -->
+<script data-main="assets/javascript/app" src="assets/javascript/require.js"></script>
+<!-- <script src="assets/javascript/game.js" ></script> -->
 
 </body>
 </html>

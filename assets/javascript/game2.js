@@ -1,7 +1,7 @@
 /*
 * bring in the hangman library module
 */
-var myLib = require('hangmanLib');
+var myLib = require('./hangmanLib');
 
 var guessingCharacter;
 var guessedCharacters = [];
@@ -27,14 +27,6 @@ for (var i = 0; i < targetCharacters.length; i++) {
 }
 console.log(wordProgress);
 
-
-
-
-// cell.appendChild(newContent);
-// var place = document.getElementById("display");
-// document.body.insertBefore(cell, place);
-
-//displayPanel.innerHTML = wordProgress;
 document.onkeyup = function(event) 
 {
     var userKey = event.key;
@@ -83,3 +75,47 @@ document.onkeyup = function(event)
     }
 
 };
+
+// document.onkeyup = function(event) 
+// {
+//     var userKey = event.key;
+
+//     // check if userKey is alphabetical
+
+//     var userKeyLabel = $("<label></label>")
+//         .text(userKey)
+//         .css({"display": "inline-block", "text-align":"center","vertical-align":"middle" })
+//         .css({"width": "2rem", "height": "3rem"})
+//         .css({"padding":".6rem 0.05rem", "margin": ".2rem" });
+
+//     $("#triedChars").append(userKeyLabel);
+
+//      var indexFound = [];
+//      $.each(targetCharacters, (index, item) => {
+//         if (item == userKey) {
+//            indexFound.push(index);
+//         }
+//     });
+
+//     if (indexFound.length > 0) 
+//     {
+//         $.each(indexFound, (index, item) => {
+//             wordProgress[item] = userKey;
+//             // $("#gameWord div:nth-child(" + indexFound[index]+1 + ")").html(userKey);
+//             // $("#gameWord div:nth-child(" + indexFound[index]+1 + ")").append(userKey);
+//             // $("#gameWord div:nth-child(" + indexFound[index]+1 + ")").text(
+//             //     function(k, origText) {
+//             //         return wordProgress[item];
+//             //     }
+//             // );
+//         });
+//         // update cell character
+//         gameProgress ($("#gameWord"), targetCharacters.length, wordProgress);
+
+//         // check if game done
+//         if ( checkGameOver(wordProgress)) {
+//             alert("You Won");
+//         }
+//     }
+
+// };

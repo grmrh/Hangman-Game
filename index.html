@@ -10,57 +10,132 @@
     <title>Hangman game</title>
 </head>
 <body>
+    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="">
+        <div class="container">
+          <a href="../" class="navbar-brand">Hangman</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="">
+                <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+              </li>
+              <li class="nav-item">
+              </li>
+              <li class="nav-item">
+              </li>
+              <li class="nav-item dropdown">
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+      
     <div class="container">
-        <!-- <div class="container"> -->
-           
-            <div class="row">
-                <div class="col-md-8">
-                    <header><h3>Hangman, let it begin!</h3></header>
-                    <h2 id="targetWord" placeholder="display target word here"></h2>
-                    <h2 id="gameWord" placeholder="display target word here"></h2>
-                    <h4>You have tried: </h4>
-                    <h3 id="triedChars" placeholder="display tried characters"></h3>
+        <div class="row">
+            <div class="col-lg-12">
+              <div class="page-header">
+                <h1 id="containers">Containers</h1>
+              </div>
+              <div class="bs-component">
+                <div class="jumbotron text-center">
+                  <h1 class="display-3 text-center">Press any key to get started!</h1>
+                  <p class="lead">Wins: </p>
+                  <hr class="my-4">
+                  <p>Want some music in background? Hit the button below..</p>
+                  <p class="lead">
+                    <div id="musicControls" class="text-center">                          
+                            <button class="btn btn-primary btn-lg theme-button">
+                              <span class="glyphicon glyphicon-music"></span> Play Theme!</button>
+                            <button class="btn btn-dark btn-xs pause-button">
+                              <span class="glyphicon glyphicon-pause"></span> Pause</button>
+                    </div>
+                  </p>
                 </div>
-                <div class-"col-md-4">
-                    <div class="row">
-                        <div class="col-12">
-                            <label>Target word: <label id="userTargetWord"></label></label>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                        <!-- <div class="bs-component"> -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Game Play</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">You will absolutely love it, period.</h6>
+                            <p class="card-text">Hit the key in the keyboard. When you guess right, the upper character letter will display in the position(s). </p>
+                            <h2 id="targetWord" style="display:none"></h2>
+                            <div class="game-word-box">
+                                <h1 id="gameWord" class="text-primary"></h1>
+                            </div>
+                            <div class="game-tried-box">
+                                <h6>Letters you have tried: </h6>
+                                <h1 id="triedChars" class="text-lg"></h1>
+                            </div>
                         </div>
+                    <!-- </div> -->
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <label>Tried characters: <label id="userTriedChars"></label></label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                                <label># of chars guessed correctly: <label id="userCorrectCount"></label></label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <label># of chars guessed wrongly: <label id="userWrongCount"></label></label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <label># of tried chars: <label id="userTriedCharsCount"></label></label>
+                </div>
+                <div class-"col-lg-4">
+                        <div class="bs-component">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-4 text-warning">
+                                    <label>Target word: </label>
+                                </div>
+                                <div class="col-lg-"8>
+                                        <label class="text-primary" id="userTargetWord"></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 text-warning">
+                                        <label>Tried characters: </label>
+                                </div>
+                                <div class="col-lg-8">
+                                        <label class="text-primary" id="userTriedChars"></label>
+                                </div>
+                            </div>
+                            <div class="row">                               
+                                    <div class="col-lg-10 text-warning">
+                                            <label># of chars guessed correctly: </label>
+                                    </div>
+                                    <div class="col-lg-2">
+                                            <label class="text-primary" id="userCorrectCount"></label>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-10 text-warning">
+                                    <label># of chars guessed wrongly: </label>
+                                </div>
+                                <div class="col-lg-2">
+                                         <label class="text-primary" id="userWrongCount"></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-10 text-warning">
+                                    <label># of tried chars: </label>
+                                </div> 
+                                <div class="col-lg-2">
+                                       <label class="text-primary" id="userTriedCharsCount"></label>
+                                </div>  
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-10 text-warning">
+                                    <label>User score: </label>
+                                </div>
+                                <div class="col-lg-2">
+                                        <label class="text-primary" id="userScore"></label>
+                                </div>       
+                            </div>  
                         </div>  
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <label>User score: <label id="userScore"></label></label>
-                        </div>       
-                    </div>    
-                    </div>
-                </div>             
-            </div>
-        <!-- </div> -->
-
-            <div class="row">
-                <div class="col-8">A</div>
-                <div class="col-4">B</div>
-            </div>
+                </div>
+                </div>
+            </div>             
     </div>
 
 

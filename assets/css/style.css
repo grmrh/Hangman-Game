@@ -1,7 +1,11 @@
+/* bosy {
+    background-image: url("assets/css/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg");
+} */
+
 .cell-box {
     width: 1.5rem;
     height: 1.5rem;
-    border: 2px  solid black;
+    border: 2px  solid whitesmoke;
 }
 
 #gameWord {
@@ -10,4 +14,15 @@
    /* padding:  .5rem; */
    padding-bottom: -5px;
    /* padding: .5rem; */
+}
+
+.game-word-box {
+    height: 7rem;
+    margin: 1rem 0;
+
+}
+
+.game-tried-box {
+    height: 7rem;
+    margin: 1rem 0;
 }

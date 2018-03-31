@@ -3,6 +3,18 @@
 */
 //var lib = require('./hangmanLib');
 require(['hangmanLib'], function(lib) {
+
+    // get the theme music
+    var audioElement = document.createElement("audio");
+    audioElement.setAttribute("src", "Assets/bensound-relaxing.mp3");
+
+    // Theme Button
+    $("#musicControls").on("click", ".theme-button", function() {
+      audioElement.play();
+    }).on("click", ".pause-button", function() {
+      audioElement.pause();
+    });
+
     // var username = prompt("Please enter username, e.g. like  'user1' or 'dragon.' Remember your username");
     var userGame = hangmanLib.userGame;
     // userGame.userName = username;
@@ -28,7 +40,7 @@ require(['hangmanLib'], function(lib) {
         var cell = $("<div></div>")
                         .text(wordProgress[i])
                         .css({"display": "inline-block", "text-align":"center","vertical-align":"middle" })
-                        .css({"width": "2rem", "height": "3rem", "border-bottom": "2px solid Black"})
+                        .css({"width": "2rem", "height": "3rem", "border-bottom": "2px solid Whitesmoke"})
                         .css({"padding":".6rem 0.05rem", "margin": ".2rem" });
         $("#gameWord").append(cell);
         //wordProgress[i] = cell.text();
@@ -42,7 +54,7 @@ require(['hangmanLib'], function(lib) {
     */
     document.onkeyup = function(event) 
     {
-        var userKey = event.key;
+        var userKey = (event.key).toUpperCase();
         userGame.triedCharacters.push(userKey);
        
         console.log(userGame.triedCharacters.toString());
@@ -98,7 +110,7 @@ require(['hangmanLib'], function(lib) {
             
                     console.log(userGame);
                     var tried = userGame.triedCharacters.toString();
-                    console.log(tried);
+
                     $("#userTargetWord").text(userGame.targetWord);
                     $("#userTriedChars").text(userGame.triedCharacters.toString());
                     $("#userCorrectCount").text(userGame.correctCount);
@@ -107,15 +119,15 @@ require(['hangmanLib'], function(lib) {
                     $("#userScore").text(userGame.averageScore());
                     
 
-                    if (alert("You Won")) {
-                        console.log(userGame);
-                        $("#userTargetWord").text(userGame.targetWord);
-                        $("#userTriedChars").text(userGame.triedCharacters.toString());
-                        $("#userCorrectCount").text(userGame.correctCount);
-                        $("#userWrongCount").append($("<label></label>").text(userGame.wrongCount));
-                        $("#userTriedCharsCount").html(userGame.tillCorrectCount());
-                        $("#userScore").text(userGame.averageScore());
-                        console.log(userGame.averageScore());
+                    if (alert("Congratulation, You Won!")) {
+                        // console.log(userGame);
+                        // $("#userTargetWord").text(userGame.targetWord);
+                        // $("#userTriedChars").text(userGame.triedCharacters.toString());
+                        // $("#userCorrectCount").text(userGame.correctCount);
+                        // $("#userWrongCount").append($("<label></label>").text(userGame.wrongCount));
+                        // $("#userTriedCharsCount").html(userGame.tillCorrectCount());
+                        // $("#userScore").text(userGame.averageScore());
+                        // console.log(userGame.averageScore());
                     }
                 }
                 else if (reachedMaxNumberOfTrial)

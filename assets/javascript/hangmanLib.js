@@ -8,7 +8,7 @@ var hangmanLib = (function() {
     var themeWords = function() {
         return  {
             gameTheme: "planet",
-            planets: ["neptune", "jupiter", "mars", "saturn", "uranus", "venus", "mercury", "earth" ],
+            planets: ["NEPTUNE", "JUPITER", "MARS", "SATURN", "URANUS", "VENUS", "MERCURY", "EARTH" ],
             numberOfWords: 8
         };
     };
@@ -121,11 +121,11 @@ var displayGameProgress = function(selector, wordLength, divValues) {
         var cell = $("<div></div>")
                         .text(divValues[i])
                         .css({"display": "inline-block", "text-align":"center","vertical-align":"middle" })
-                        .css({"width": "2rem", "height": "3rem", "border-bottom": "2px solid Black"})
+                        .css({"width": "3rem", "height": "4rem", "border-bottom": "2px solid Whitesmoke"})
                         .css({"padding":".6rem 0.05rem", "margin": ".2rem" });
         selector.append(cell);
         //wordProgress[i] = cell.text();
-    };
+    };n
 };
 
     return {
